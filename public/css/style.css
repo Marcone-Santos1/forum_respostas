@@ -1,0 +1,34 @@
+* {
+  text-decoration: none;
+}
+
+body {
+  background: #eceff1;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border-width: 0;
+  white-space: nowrap;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper i {
+  position: absolute;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  top: .5em
+}
+
+.card {
+  border: 1px solid #eceff1;
+}

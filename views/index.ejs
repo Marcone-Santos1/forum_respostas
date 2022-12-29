@@ -1,0 +1,33 @@
+<%- include('partials/header.ejs') %>
+
+    <body>
+        <%- include('partials/navbar.ejs') %>
+            <div class="container">
+
+                <div class="card mt-3 mb-3">
+
+                    <div class="card-header">
+                        <h1>
+                            Perguntas
+                        </h1>
+                    </div>
+                    <div class="card-body">
+                        <a class="btn btn-primary" href="/perguntar">Perguntar</a>
+                    </div>
+                </div>
+ 
+                <% for (let pergunta of perguntas) { %>
+
+                    <div class="card mt-1 perguntas">
+
+                        <div class="card-body">
+                            <h3>
+                                <%= pergunta.titulo %>
+                            </h3>
+                            <a href="/pergunta/<%= pergunta.id %>" class="btn btn-primary">Responder</a>
+                        </div>
+                    </div>
+                    <% }; %>
+            </div>
+    </body>
+    <%- include('partials/footer.ejs') %>

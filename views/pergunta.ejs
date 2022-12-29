@@ -1,0 +1,46 @@
+<%- include('partials/header.ejs') %>
+
+    <body>
+        <%- include('partials/navbar.ejs') %>
+            <div class="container">
+                <div class="card mt-3">
+
+                    <div class="card-header">
+                        <h3>
+                            <%= pergunta.titulo %>
+                        </h3>
+                    </div>
+
+                    <div class="card-body">
+                        <p>
+                            <%= pergunta.descricao %>
+                        </p>
+                    </div>
+                </div>
+                <form action="/responder" method="post">
+                    <div class="form-group mt-3">
+                        <input type="hidden" name="id" id="" value="<%= pergunta.id %>">
+                        <label lass="" for="">Resposta</label>
+                        <textarea class="form-control" name="resposta" id="" cols="30" rows="10"
+                            placeholder="Descreva a sua Resposta aqui"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Responder</button>
+                </form>
+                <hr>
+                <div class="mt-2 mb-5">
+                    <h2>Respostas:</h2>
+                    <% for (let resposta of respostas) { %>
+
+                        <div class="card mt-2">
+
+                            <div class="card-body">
+                                <p>
+                                    <%= resposta.corpo %>
+                                </p>
+                            </div>
+                        </div>
+                        <% }; %>
+                </div>
+            </div>
+    </body>
+    <%- include('partials/footer.ejs') %>
